@@ -105,7 +105,7 @@ public class BlockETStairs extends BlockStairs implements IBlockMetadata {
 
 	@Override
 	public String getBlockName(ItemStack itemStack) {
-		int meta = TileEntityMetadata.getItemDamage(itemStack);
+		int meta = Math.max(0, Math.min(PlankType.ExtraTreePlanks.values().length, TileEntityMetadata.getItemDamage(itemStack)));
 		return I18N.localise("extratrees.block.woodstairs.name", WoodManager.getPlankType(meta + 32).getName());
 	}
 

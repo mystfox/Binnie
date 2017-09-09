@@ -215,7 +215,7 @@ public class BlockETDoor extends BlockDoor implements IBlockMetadata {
 
 	@Override
 	public String getBlockName(ItemStack stack) {
-		int meta = TileEntityMetadata.getItemDamage(stack);
+		int meta = TileEntityMetadata.getItemDamage(stack); //Unsure if this needs to be clamped, I think not?
 		String typeName = getDoorType(meta).getName();
 		String woodName = WoodManager.getPlankType(meta & 0xFF).getName();
 		if (typeName.isEmpty()) {
